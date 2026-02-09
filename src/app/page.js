@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { calculateNetSalary } from "@/utils/taxCalculator";
 import SeoText from "./seoText";
 
@@ -12,6 +12,12 @@ export default function Home() {
     if (!salary) return;
     setResult(calculateNetSalary(Number(salary)));
   };
+
+  useEffect(() => {
+    if (window.adsbygoogle) {
+      window.adsbygoogle.push({});
+    }
+  }, []);
 
   return (
     <main className="bg-gray-100 min-h-screen py-16 px-4">
@@ -48,6 +54,16 @@ export default function Home() {
 
       {/* SEO 설명 영역 */}
       <SeoText />
+      <div className="mt-10">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-9819687643821802"
+          data-ad-slot="8977877593"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
     </main>
   );
 }

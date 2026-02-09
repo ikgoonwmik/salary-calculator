@@ -38,6 +38,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <head>
+          {/* Google AdSense */}
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9819687643821802"
+            crossorigin="anonymous"
+          ></script>
+        </head>
         {children}
       </body>
     </html>
